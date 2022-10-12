@@ -1,0 +1,15 @@
+{
+  "name": "discord-dice-roller",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "deploy:func": "aws-deploy - deploy lambda:main",
+    "deploy:api": "aws-deploy - deploy apig:main"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@axel669/aws-deploy": "^0.3.3"
+  }
+}

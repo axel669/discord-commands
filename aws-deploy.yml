@@ -1,0 +1,29 @@
+region: us-west-1
+prefix: discord-cmds_
+tags:
+  user: axel669
+  project: Discord Commands
+
+deployment:
+  resources: []
+
+functions:
+  main:
+    name: main
+    dir: roller
+    runtime: nodejs16.x
+    memory: 128
+    timeout: 5
+    handler: main.handler
+
+apis:
+  main:
+    name: Discord Commands
+    stage: live
+    integrations:
+      commands:
+        type: function
+        func: main
+    routes:
+      "POST /commands":
+        action: commands
